@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
+
+
+:root{
+    --font-base:'Times New Roman', Times, serif ;
+    --font-alt:Arial, Helvetica, sans-serif;
+
+    --color-gold:#dcca87;
+    --color-black:#0c0c0c;
+    --color-gray:#545454;
+    --color-grey:#aaaaaa;
+    --color-crispy:#f5efdb;
+}
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+body{
+    background: #0c0c0c;
+}
+a{
+    color: unset;
+    text-decoration: none;
+}
+.slide-bottom{
+    -webkit-animation: slide-bottom 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.96) both;
+    animation: slide-bottom  0.5s cubic-bezier(0.25, 0.46, 0.45, 0.96) both;
+}
+@-webkit-keyframes slide-bottom{
+    0%{
+        -webkit-transform: translateY(-25%);
+        transform: translateY(-25%);
+    }
+    100%{
+        -webkit-transform: translateY(0%);
+        transform: translateY(0%);
+    }
+}
+@keyframes slide-bottom{
+    0%{
+        -webkit-transform: translateY(-25%);
+        transform: translateY(-25%);
+    }
+    100%{
+        -webkit-transform: translateY(0%);
+        transform: translateY(0%);
+    }
+}

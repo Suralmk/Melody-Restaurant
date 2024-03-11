@@ -1,0 +1,26 @@
+.app__intro{
+    max-width: 1350px;
+    margin: 0 auto;
+    position: relative;
+}
+video{
+    width: 100%;
+    object-fit: cover;
+}
+.app__intro-overlay_circle{
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 2px solid rgb(255, 255, 255);
+    cursor: pointer;
+}
+.app__intro-overlay{
+    position: absolute;
+    inset: 0;
+}
+@media screen and (max-width:750px){
+    .app__intro-overlay_circle{
+        width: 70px;
+        height: 70px;
+    }
+}

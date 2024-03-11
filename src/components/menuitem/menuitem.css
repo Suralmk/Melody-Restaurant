@@ -1,0 +1,30 @@
+.app__menuitem{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin: 1rem 0;
+}
+.app__menuitem-head{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.app__menuitem-name p{
+    font-size: 20px;
+}
+
+.app__menuitem-dash{
+    width: 100px;
+    height: 1px;
+    background: rgb(255, 255, 255);
+    margin: 0 1rem 0 1.5rem;
+}
+.app__menuitem-price p{
+    font-size: 15px;
+}
+.app__menuitem-tag p{
+    font-size: 15px;
+    margin-top: 0.5rem;
+    color: var(--color-grey);
+}

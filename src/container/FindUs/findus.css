@@ -1,0 +1,21 @@
+.app__findus{
+    max-width: 1350px;
+    margin: 0 auto;
+    justify-content: space-between;
+}
+.app__findus-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: flex-start;
+}
+.app__findus-image{
+    display: flex;
+    height: 500px;
+    margin-left: 8rem;
+}
+.app__findus-image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}

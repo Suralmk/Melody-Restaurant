@@ -1,0 +1,43 @@
+.app__chef {
+    max-width: 1350px;
+    margin: 0 auto;
+}
+.app__chef-image{
+    display: flex;
+}
+.app__chef-image img{
+    width: 80%;
+    height: auto;
+}
+.app__chef-message{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+.app__chef-message{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 20px;
+}
+.message{
+    margin: 2rem 0;
+}
+@media screen and (max-width:950px) {
+    .app__chef{
+        flex-direction: column;
+    }
+    .app__chef-image img{
+        width: 100%;
+    }
+    .app__chef-message{
+        margin-top: 3rem ;
+    }
+}
+@media screen and (max-width:750px) {
+    .app__chef-message h1{
+        font-size: 35px;
+    } 
+}
