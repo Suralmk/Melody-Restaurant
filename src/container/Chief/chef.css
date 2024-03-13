@@ -4,16 +4,20 @@
 }
 .app__chef-image{
     display: flex;
+    justify-content: center;
+    width: 50%;
 }
 .app__chef-image img{
     width: 80%;
     height: auto;
+    border-radius: 20px 150px 50px 400px;
 }
 .app__chef-message{
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
+    width: 50%;
 }
 .app__chef-message{
     display: flex;
@@ -29,11 +33,12 @@
     .app__chef{
         flex-direction: column;
     }
-    .app__chef-image img{
+    .app__chef-image{
         width: 100%;
     }
     .app__chef-message{
         margin-top: 3rem ;
+        width: 100%;
     }
 }
 @media screen and (max-width:750px) {

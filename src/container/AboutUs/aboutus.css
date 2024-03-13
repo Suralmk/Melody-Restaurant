@@ -1,6 +1,8 @@
 .app__about{
-    position: relative;
-    
+    position: relative;    
+}
+#about {
+    height: 800px;
 }
 /* #about{
     margin: 0 auto;

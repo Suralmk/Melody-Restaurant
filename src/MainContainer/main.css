@@ -1,0 +1,44 @@
+.app__book {
+    max-width: 1300px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+.app__book-form {
+    width: 100%;
+    height: auto;
+}
+.app__book-form form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 30px;
+}
+.app__book-form  form .input-field {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+.input-field label {
+    position: absolute;
+    color: #c0af73ad;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+    z-index: -2;
+}
+.app__book-form  form .input-field input{
+    color: white;
+    background: transparent;
+    border: 1px solid #dcca8773;
+    background: none;
+    outline: none;
+    padding: 18px 30px;
+}
+ .input-field input:focus > label{
+    top: 0;
+    background: red;
+}

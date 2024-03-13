@@ -1,0 +1,29 @@
+.app__subscribe {
+    flex-direction: column;
+    gap: 20px;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+.app__subscribe .subscribe__form {
+    width: 50%;
+    display: flex;
+    gap: 0;
+}
+.subscribe__form input {
+    width: 75%;
+    border: 1px solid #dcca8773;
+    background: none;
+    outline: none;
+    padding: 5px 30px;
+}
+.subscribe__form button {
+    width: 150px;
+}
+@media screen and (max-width:900px) {
+    .app__subscribe .subscribe__form {
+        width: 100%;
+    }
+    .subscribe__form input {
+        width: 100%;
+    }
+}

@@ -5,8 +5,8 @@ import FindUs from './FindUs/FindUs'
 import Footer from './Footer/footer'
 import Gallary from './Gallary/Gallary'
 import Intro from './Intro/Intro'
-import Laurels from './Laurels/Laurels'
 import Menu from './Menu/Menu'
+import Subscribe from './Subscribe/Subscribe'
 export {
     AboutUs,
     Header,
@@ -15,6 +15,6 @@ export {
     Footer,
     Gallary,
     Intro,
-    Laurels,
     Menu,
+    Subscribe
 }

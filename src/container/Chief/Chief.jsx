@@ -8,7 +8,7 @@ const Chief = () => {
       <div className='app__chef section__padding flex__center '>
 
         <div className="app__chef-image">
-          <img src={images.sura} alt="" />
+          <img src={images.chef} alt="" />
         </div>
 
         <div className="app__chef-message ">
