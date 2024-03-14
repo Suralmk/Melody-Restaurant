@@ -66,7 +66,7 @@ const BookTable = () => {
             />
             <label htmlFor=''>Rerervation Date</label>
           </div>
-          <buttton className='custom__button'>Book Table</buttton>
+          <buttton className='custom__button' type="submit">Book Table</buttton>
         </form>
       </div>
     </div>
