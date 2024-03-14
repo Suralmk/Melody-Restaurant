@@ -35,7 +35,9 @@ app.post(
         date: req.body.date
       }
       const reservation = await Reservation.create(newReservation)
-      return res.status(201).send(reservation)
+      return res.status(201).send({
+        message : `Succesfully Reserved for date ${req.body.date}`
+      })
     } catch (err) {
       return res.status(500).send({ message: err.message })
     }
