@@ -16,35 +16,38 @@ app.get('/', (req, res) => {
   res.send('Hello')
 })
 
-app.post(
-  '/reserve',
-  async (req, res) => {
-    try {
-      if (
-        !req.body.full_name ||
-        !req.body.email ||
-        !req.body.phone ||
-        !req.body.date
-      ) {
-        return res.status(400).send({ message: 'All fieds are required!' })
-      }
-
-      const newReservation = {
-        full_name: req.body.full_name,
-        email: req.body.email,
-        phone: req.body.phone,
-        date: req.body.date
-      }
-
-      const reservation = await Reservation.create(newReservation)
-      return res.status(201).send({
-        message : `Succesfully Reserved for date ${req.body.date}`
-      })
-    } catch (err) {
-      return res.status(500).send({ message: err.message })
+app.post('/reserve', async (req, res) => {
+  try {
+    if (
+      !req.body.full_name ||
+      !req.body.email ||
+      !req.body.phone ||
+      !req.body.date
+    ) {
+      return res.status(400).send({ message: 'All fieds are required!' })
     }
+    
+    var currentDate = new Date()
+    var reservationDate = new Date(req.body.date)
+    if (reservationDate < currentDate) {
+      return res.status(401).send({
+        message : "Error : Date has already passed!"
+      })
+    }
+    const newReservation = {
+      full_name: req.body.full_name,
+      email: req.body.email,
+      phone: req.body.phone,
+      date: req.body.date
+    }
+    const reservation = await Reservation.create(newReservation)
+    return res.status(201).send({
+      message: `Succesfully Reserved for date ${req.body.date}`
+    })
+  } catch (err) {
+    return res.status(500).send({ message: err.message })
   }
-)
+})
 mongoose
   .connect(MONGOURL)
   .then(() => {
