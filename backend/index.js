@@ -13,7 +13,7 @@ app.use(
   })
 )
 
-app.post("/reserve" ,async  (req, res) => {
+app.post("https://melody-restaurant-api.vercel.app/reserve" ,async  (req, res) => {
 try {
   if (
     !req.body.full_name ||
