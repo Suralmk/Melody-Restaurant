@@ -19,6 +19,7 @@ import pizza from '../assets/pizza.png'
 import animpics from '../assets/anim.png'
 import mainfood from '../assets/mainfood.png'
 import coktail from '../assets/cocktail.png'
+import spinner from '../assets/spinner.svg'
 export default{
     logo,
     image1,
@@ -31,6 +32,6 @@ export default{
     cafe6,
     cafe7,
     cafe8,
-    cafe9, chef, bg3, bg4, pizza, animpics, mainfood, coktail
+    cafe9, chef, bg3, bg4, pizza, animpics, mainfood, coktail, spinner
 
 }

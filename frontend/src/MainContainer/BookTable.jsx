@@ -1,14 +1,26 @@
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import './main.css'
 import { api } from '../config'
+import images from '../constants/images'
 const BookTable = () => {
+  const buttonRef = useRef(null)
   const [fullName, setFullName] = useState('')
   const [email, setEmail] = useState('')
   const [phone, setPhone] = useState('')
   const [date, setDate] = useState('')
-  const [status, setStatus] = useState()
+  const [status, setStatus] = useState("")
+  const [loading, setLoading] = useState(false)
   const HandleReservation = async e => {
     e.preventDefault()
+    setLoading(true)
+
+    buttonRef.current.disabled = true
+    buttonRef.current.style.cursor = 'not-allowed'
+    setTimeout(() => {
+      setLoading(false)
+      buttonRef.current.disabled = false
+      buttonRef.current.style.cursor = 'pointer'
+    }, 3000)
     try {
       const response = await api.post('/reserve', {
         full_name: fullName,
@@ -16,7 +28,10 @@ const BookTable = () => {
         phone: phone,
         date: date
       })
-      setStatus(response.data)
+
+      setStatus(response.data.message)
+      setLoading(false)
+
       console.log(response)
     } catch (err) {
       console.log(err.message)
@@ -67,12 +82,21 @@ const BookTable = () => {
             />
             <label htmlFor=''>Rerervation Date</label>
           </div>
-          <button className='custom__button' type='submit'>
+          <button
+            className='custom__button reserve-btn'
+            ref={buttonRef}
+            type='submit'
+          >
             Book Table
+            {loading ? (
+              <img className='spinner-img' src={images.spinner} alt='' />
+            ) : (
+              ''
+            )}
           </button>
         </form>
 
-        {status ? <p className='status-message'>{'jkj'}</p> : ''}
+        {status ? <p className='status-message'>{status}</p> : ''}
       </div>
     </div>
   )
