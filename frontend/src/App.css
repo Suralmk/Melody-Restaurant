@@ -68,13 +68,10 @@
     }
     
  }
- .sticky + .app__header {
+ .sticky + .app__header,   .sticky + .app__book{
     padding-top: 230px ;
  }
- .sticky + .app__book {
-    padding-top: 230px ;
- }
-
+ 
  input:-webkit-autofill,
 input:-webkit-autofill:hover, 
 input:-webkit-autofill:focus, 

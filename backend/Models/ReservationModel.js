@@ -11,7 +11,15 @@ const ReservationSchema = mongoose.Schema({
   },
   phone: {
     type: Number,
-    required: true
+    required: true,
+    validate: {
+      validator: function (v, cb) {
+        Reservation.find({ phone: v }, function (err, docs) {
+          cb(docs.length == 0)
+        })
+      },
+      message: 'User already exists!'
+    }
   },
   date: {
     type: Date,

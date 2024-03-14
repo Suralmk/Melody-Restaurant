@@ -15,13 +15,13 @@ window.addEventListener('scroll', function () {
   return (
     <div className='app__navbar' ref={navRef}>
       <div className="app__navbar-logo">
-        <img src={images.logo} alt="" />
+        <p className="p__style">Melody</p>
       </div>
 
         <ul className="app__navbar-links">
           <li className="p__style2"><Link to="/">Home</Link></li>
-          <li className="p__style2"><Link to="/#about">About</Link></li>
-          <li className="p__style2"><Link to="/#menu">Menu</Link></li>
+          <li className="p__style2"><a href="#about">About</a></li>
+          <li className="p__style2"><a href="#menu">Menu</a></li>
           <li className="p__style2"><a href="#contact">Contact</a></li>
         </ul>
 
@@ -37,8 +37,8 @@ window.addEventListener('scroll', function () {
           <MdOutlineRestaurantMenu color='white' fontSize={27} cursor='pointer' onClick={() => setToggle(false)} className='menu_close' />
           <ul className="app__navbar-menu_links">
             <li className="p__style2"><Link to="/">Home</Link></li>
-            <li className="p__style2"><Link to="/#about">About</Link></li>
-            <li className="p__style2"><Link href="#menu">Menu</Link></li>
+            <li className="p__style2"><a href="#about">About</a></li>
+            <li className="p__style2"><a href="#menu">Menu</a></li>
             <li className="p__style2"><a href="#contact">Contact</a></li>
           </ul>
           <div className="app__navbar-menu_login">

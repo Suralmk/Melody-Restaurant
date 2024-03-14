@@ -8,12 +8,11 @@ const BookTable = () => {
   const [email, setEmail] = useState('')
   const [phone, setPhone] = useState('')
   const [date, setDate] = useState('')
-  const [status, setStatus] = useState("")
+  const [status, setStatus] = useState('')
   const [loading, setLoading] = useState(false)
   const HandleReservation = async e => {
     e.preventDefault()
     setLoading(true)
-
     buttonRef.current.disabled = true
     buttonRef.current.style.cursor = 'not-allowed'
     setTimeout(() => {
@@ -28,10 +27,8 @@ const BookTable = () => {
         phone: phone,
         date: date
       })
-
       setStatus(response.data.message)
       setLoading(false)
-
       console.log(response)
     } catch (err) {
       console.log(err.message)
@@ -44,7 +41,7 @@ const BookTable = () => {
         <form onSubmit={e => HandleReservation(e)}>
           <div className='input-field'>
             <input
-              type='text'
+              pe='text'
               placeholder=''
               value={fullName}
               required
@@ -52,8 +49,10 @@ const BookTable = () => {
             />
             <label htmlFor=''>Full Name</label>
           </div>
+
           <div className='input-field'>
             <input
+              
               type='email'
               placeholder=''
               required
@@ -64,6 +63,7 @@ const BookTable = () => {
           </div>
           <div className='input-field'>
             <input
+             
               type='number'
               placeholder=''
               required

@@ -28,12 +28,14 @@ app.post(
       ) {
         return res.status(400).send({ message: 'All fieds are required!' })
       }
+
       const newReservation = {
         full_name: req.body.full_name,
         email: req.body.email,
         phone: req.body.phone,
         date: req.body.date
       }
+
       const reservation = await Reservation.create(newReservation)
       return res.status(201).send({
         message : `Succesfully Reserved for date ${req.body.date}`
