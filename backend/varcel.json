@@ -1,23 +1,15 @@
 {
-    "version": 2,
-    "name": "Melody-Restaurant",
-    "builds": [
-      { "src": "api/*.js", "use": "@vercel/node" },
-      { "src": "public/**/*", "use": "@vercel/static" }
-    ],
-    "routes": [
-      { "handle": "filesystem" },
-      {
-        "src": "/api/(.*)",
-        "dest": "api/$1.js"
-      },
-      {
-        "src": "/(.*)",
-        "dest": "public/$1"
-      }
-    ],
-    "env": {
-      "MONGODB_URI": "@your-mongodb-uri"
+  "version": 2,
+  "builds": [
+    {
+      "src": "./index.js",
+      "use": "@vercel/node"
     }
-  }
-  
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/"
+    }
+  ]
+}
