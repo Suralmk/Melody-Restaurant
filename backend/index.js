@@ -9,7 +9,7 @@ const app = express()
 app.use(express.json())
 app.use(
   cors({
-    origin: 'https://melody-restaurant-frontend.vercel.app/'
+    origin: 'https://melody-restaurant-frontend.vercel.app'
   })
 )
 app.get('/', (req, res) => {
