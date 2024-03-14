@@ -8,7 +8,7 @@ const BookTable = () => {
   const [date, setDate] = useState('')
   const [status, setStatus] = useState()
   const HandleReservation = async e => {
-    e.precentDefault()
+    e.preventDefault()
     try {
       const response = await  api.post('/reserve', {
         full_name: fullName,
