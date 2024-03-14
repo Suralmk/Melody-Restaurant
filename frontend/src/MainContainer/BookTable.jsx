@@ -10,13 +10,14 @@ const BookTable = () => {
   const HandleReservation = async e => {
     e.preventDefault()
     try {
-      const response = await  api.post('/reserve', {
+      const response = await api.post('/reserve', {
         full_name: fullName,
         email: email,
         phone: phone,
         date: date
       })
       setStatus(response.data)
+      console.log(response)
     } catch (err) {
       console.log(err.message)
     }
@@ -66,8 +67,12 @@ const BookTable = () => {
             />
             <label htmlFor=''>Rerervation Date</label>
           </div>
-          <button className='custom__button' type="submit">Book Table</button>
+          <button className='custom__button' type='submit'>
+            Book Table
+          </button>
         </form>
+
+        {status ? <p className='status-message'>{'jkj'}</p> : ''}
       </div>
     </div>
   )
