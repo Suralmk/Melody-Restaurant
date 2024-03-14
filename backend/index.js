@@ -12,29 +12,35 @@ app.use(
     origin: 'http://localhost:3000'
   })
 )
+app.get('/', (req, res) => {
+  res.send('Server is running')
+})
 
-app.post("https://melody-restaurant-api.vercel.app/reserve" ,async  (req, res) => {
-try {
-  if (
-    !req.body.full_name ||
-    !req.body.email ||
-    !req.body.phone ||
-    !req.body.date 
-  ) {
-    return res.status(400).send({message : "All fieds are required!"}) 
+app.post(
+  'https://melody-restaurant-api.vercel.app/reserve',
+  async (req, res) => {
+    try {
+      if (
+        !req.body.full_name ||
+        !req.body.email ||
+        !req.body.phone ||
+        !req.body.date
+      ) {
+        return res.status(400).send({ message: 'All fieds are required!' })
+      }
+      const newReservation = {
+        full_name: req.body.full_name,
+        email: req.body.email,
+        phone: req.body.phone,
+        date: req.body.date
+      }
+      const reservation = await Reservation.create(newReservation)
+      return res.status(201).send(reservation)
+    } catch (err) {
+      return res.status(500).send({ message: err.message })
+    }
   }
-  const newReservation = {
-    full_name : req.body.full_name,
-    email : req.body.email,
-    phone : req.body.phone,
-    date : req.body.date
-  }
-  const reservation = await Reservation.create(newReservation)
-  return res.status(201).send(reservation)
-} catch (err) {
-  return res.status(500).send({message : err.message})
-}
-})         
+)
 mongoose
   .connect(MONGOURL)
   .then(() => {
