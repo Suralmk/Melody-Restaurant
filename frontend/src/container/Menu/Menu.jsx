@@ -21,7 +21,15 @@ const Menu = () => {
     <div className='section__padding app__menu flex__center' id='menu'>
       <div className='app__menu-title'>
         <SubHeading title='Menu that fires your pallate' />
-        <h1 className='p__style'>Today's Special</h1>
+        <motion.h1
+          className='p__style'
+          initial={{ y: -100, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1.5, delay: 0.2 }}
+        >
+          Today's Special
+        </motion.h1>
       </div>
 
       <div className='app__menu-m'>

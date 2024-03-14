@@ -28,6 +28,7 @@
     position: relative;
     display: flex;
     align-items: center;
+    gap: 120px;
     width: 100%;
     z-index: 2;
     margin: 0 auto;
