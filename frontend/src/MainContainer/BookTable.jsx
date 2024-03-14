@@ -8,12 +8,13 @@ const BookTable = () => {
   const [date, setDate] = useState('')
   const [status, setStatus] = useState()
   const HandleReservation = async e => {
+    e.precentDefault()
     try {
-      const response = api.post("/reserve", {
-        full_name :fullName,
-        email : email,
+      const response = await  api.post('/reserve', {
+        full_name: fullName,
+        email: email,
         phone: phone,
-        date : date
+        date: date
       })
       setStatus(response.data)
     } catch (err) {
@@ -26,7 +27,6 @@ const BookTable = () => {
       <div className='app__book-form'>
         <form onSubmit={e => HandleReservation(e)}>
           <div className='input-field'>
-           
             <input
               type='text'
               placeholder=''
@@ -34,40 +34,37 @@ const BookTable = () => {
               required
               onChange={e => setFullName(e.target.value)}
             />
-             <label htmlFor=''>Full Name</label>
+            <label htmlFor=''>Full Name</label>
           </div>
           <div className='input-field'>
-           
             <input
-              type='text'
+              type='email'
               placeholder=''
               required
               value={email}
               onChange={e => setEmail(e.target.value)}
             />
-             <label>Email</label>
+            <label>Email</label>
           </div>
           <div className='input-field'>
-          
             <input
-              type='text'
+              type='number'
               placeholder=''
               required
               value={phone}
               onChange={e => setPhone(e.target.value)}
             />
-              <label htmlFor=''>Phone Number</label>
+            <label htmlFor=''>Phone Number</label>
           </div>
           <div className='input-field'>
-           
             <input
-              type='text'
-              placeholder=''
+              type='date'
               required
               value={date}
+              placeholder='YYYY-MM-DD'
               onChange={e => setDate(e.target.value)}
             />
-             <label htmlFor=''>Rerervation Date</label>
+            <label htmlFor=''>Rerervation Date</label>
           </div>
           <buttton className='custom__button'>Book Table</buttton>
         </form>
