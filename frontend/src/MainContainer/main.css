@@ -26,9 +26,9 @@
     position: absolute;
     color: #c0af73ad;
     top: 50%;
-    left: 20px;
+    left: 25px;
     transform: translateY(-50%);
-    z-index: -2;
+    transition: 0.5s all;
 }
 .app__book-form  form .input-field input{
     color: white;
@@ -37,8 +37,12 @@
     background: none;
     outline: none;
     padding: 18px 30px;
+    
 }
- .input-field input:focus > label{
+ .input-field input:focus + label, 
+ .input-field input:valid + label{
     top: 0;
-    background: red;
+    background: black;
+    z-index: 3;
+    padding: 0 6px;
 }
