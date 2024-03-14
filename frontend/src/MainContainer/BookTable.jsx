@@ -1,15 +1,30 @@
 import React, { useState } from 'react'
 import './main.css'
+import { api } from '../config'
 const BookTable = () => {
   const [fullName, setFullName] = useState('')
   const [email, setEmail] = useState('')
   const [phone, setPhone] = useState('')
   const [date, setDate] = useState('')
+  const [status, setStatus] = useState()
+  const HandleReservation = async e => {
+    try {
+      const response = api.post("/reserve", {
+        full_name :fullName,
+        email : email,
+        phone: phone,
+        date : date
+      })
+      setStatus(response.data)
+    } catch (err) {
+      console.log(err.message)
+    }
+  }
   return (
     <div className='app__book section__padding'>
       <h1 className='p__style'>Book A Table at Melody Restaurant</h1>
       <div className='app__book-form'>
-        <form action=''>
+        <form onSubmit={e => HandleReservation(e)}>
           <div className='input-field'>
            
             <input
