@@ -3,7 +3,7 @@ import {images} from '../../constants'
 import React from 'react'
 import { SubHeading } from '../../components'
 import './gallary.css'
-const Images =[1, images.cafe3, images.cafe4, images.cafe5, images.cafe6, images.cafe7, images.cafe8, images.cafe9, images.cafe1]
+const Images =[ images.cafe3, images.cafe4, images.cafe5, images.cafe6, images.cafe7, images.cafe8, images.cafe9, images.cafe1]
 const Gallary = () => {
   const scrollRef = React.useRef(null)
 

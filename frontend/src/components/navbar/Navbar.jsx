@@ -43,7 +43,7 @@ window.addEventListener('scroll', function () {
           </ul>
           <div className="app__navbar-menu_login">
             <div/>
-            <a href="/home" className='p__style2'>Book Table</a>
+            <Link to="/book-table" className='p__style2'>Book Table</Link>
         </div>
         </div>
         )}
