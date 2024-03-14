@@ -17,7 +17,7 @@ app.get('/', (req, res) => {
 })
 
 app.post(
-  'https://melody-restaurant-api.vercel.app/reserve',
+  '/reserve',
   async (req, res) => {
     try {
       if (
