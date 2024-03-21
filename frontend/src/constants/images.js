@@ -9,7 +9,7 @@ import cafe9 from '../assets/cafe9.jpg'
 import chef from '../assets/chef.jpg'
 import bg4 from '../assets/bg4.png'
 import pizza from '../assets/pizza.png'
-import mainfood from '../assets/mainfood.jpeg'
+import mainfood from '../assets/mainfood.png'
 import coktail from '../assets/cocktail.png'
 import spinner from '../assets/spinner.svg'
 export default{
