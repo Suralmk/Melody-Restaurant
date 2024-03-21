@@ -5,7 +5,7 @@ import { SubHeading } from '../../components'
 import { motion } from 'framer-motion'
 const Chief = () => {
   return (
-    <div className='app__chef_cover app__bg'>
+    <div className='app__chef_cover'>
       <div className='app__chef section__padding flex__center '>
         <div className='app__chef-image'>
           <motion.img
